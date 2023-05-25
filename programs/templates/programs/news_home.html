@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+{% block title %}Nouvelles{% endblock %}
+{% block content %}
+
+<h2 id="h2_news">Nouvelles sur le site</h2>
+
+{% if news %}
+    {% for el in news %}
+        <div class="alert alert-warning news_affiche" >
+            <h2>{{ el.title }}</h2>
+            <p>{{ el.description }}</p>
+            <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Lire</a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p id="no_news">Vous n'avez pas de nouvelles</p>
+    <a href="{% url 'create' %}"><button class="btn btn-info" id="news-else"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+  </svg>Ajouter un article</button></a></li>
+{% endif %}
+
+
+{% endblock %}

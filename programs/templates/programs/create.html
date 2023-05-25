@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+{% block title %}Créer de nouveaux articles{% endblock %}
+{% block content %}
+
+<h2 id="h2_news">Créer de nouveaux articles</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.title }}
+    {{ form.description }}
+    {{ form.full_text }}
+    {{ form.date }}
+    
+    <span id="message_error" class="animate_animated animate_heartBeat">{{ error }}</span>
+    <button class="btn btn-success" id="add_new" type="submit">Ajouter un article</button>
+
+</form>
+{% endblock %}
