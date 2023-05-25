@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+{% block title %}Rejoindre la cité{% endblock %}
+{% block content %}
+<h1>Register</h1>
+<div class="container">
+    <form action="{% url 'register' %}" method="post">
+    {{form.username}}
+    {{form.email}}
+    {{form.password1}}
+    {{form.password2}}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success btn-style">S'incrire inshallah</button>
+    </form>
+</div>
+<script>
+    let password1 = document.getElementById('id_password1');
+    password1.classList.add('form-control');
+    password1.placeholder = 'Mot de passe';
+
+    let password2 = document.getElementById('id_password2');
+    password2.classList.add('form-control');
+    password2.placeholder = 'Confirmez le mot de passe'
+</script>
+{% endblock %}

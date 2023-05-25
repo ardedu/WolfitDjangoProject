@@ -1,0 +1,33 @@
+{% extends 'main/layout.html' %}
+{% block title %}Rejoindre la cité{% endblock %}
+{% block content %}
+<div class="container">
+    
+    <h1>Login</h1>
+    {% if form.errors %}
+        <p>{{ form.errors.error }}</p>
+    {% endif %}
+    <form action="{% url 'login' %}" method="post">
+        {{form.username}}
+        {{form.password}}
+      
+
+
+        {% csrf_token %}
+        <a href="{% url 'password_reset' %}" class="motdepasse">Mot de passe oublié?</a><br>
+        <a href="{% url 'register' %}" class="motdepasse">J'ai jamais été dans le quartier</a><br>
+        <button type="submit" class="btn btn-success btn-style" id="wlh">Wallah</button>
+        
+    </form>
+    
+</div>
+<script>
+    let password = document.getElementById('id_password');
+    password.classList.add('form-control');
+    password.placeholder = 'Mot de passe';
+
+    let username = document.getElementById('id_username');
+    username.classList.add('form-control');
+    username.placeholder = 'Balance ton blase';
+</script>
+{% endblock %}

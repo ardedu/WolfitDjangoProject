@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+{% block title %}Panier{% endblock %}
+{% block content %}
+<h1 id="ti" class="alert alert-light"><span>Panier</span></h1>
+{% for cart_item in cart_items %}
+    <div>
+        <div class="product alert alert-warning cart_item">
+            <h3 class="alert alert-primary">{{ cart_item.product.name }}</h3>
+            
+            <img src="{{ cart_item.product.image.url }}" alt="{{ product.name }}" class="img-product img-thumbnail">
+            <div class="alert alert-dark">
+                <p class="btn btn-warning prix_panier">Prix : <span id="multipli">{{ cart_item.product.price }}</span>$</p><br>
+                <p class="btn btn-success">Quantité : <span id="par">{{ cart_item.quantity }}</span></p>
+            </div>
+            
+            <a href="{% url 'error' %}"><button type="submit" class="btn btn-success" id="buy">Acheter</button></a>
+        <!-- Ajoutez d'autres détails du produit ici -->
+        <form method="POST" action="{% url 'delete_cart_item' cart_item.pk %}">
+            {% csrf_token %}
+            
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+    </div>
+{% endfor %}
+
+{% endblock %}

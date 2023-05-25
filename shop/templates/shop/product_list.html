@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+    
+    
+   
+        <h1 id="ti" class="alert alert-light"><span>Boutique</span></h1>
+        {% for product in products %}
+        <div class="product alert alert-warning">
+            <h3 class="alert alert-primary">{{ product.name }}</h3>
+            
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-product img-thumbnail">
+            
+            <!-- Ajoutez d'autres détails du produit ici -->
+            <div class="product-buy">
+            {% if not product in cart_products %}
+                <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <p class="btn btn-warning price">{{ product.price }}$</p>
+                    <input type="number" name="quantity" value="0" min="1" class="btn btn-success" id="quan">
+                    <button type="submit" class="btn btn-warning car"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>
+                      </svg></button>
+                    
+                    
+                </form>
+            {% else %}
+                <p class="alert alert-success" id="deja">Déjà dans le panier</p>
+            {% endif %}
+            </div>
+        </div>
+
+{% endfor %}
+
+{% endblock %}
