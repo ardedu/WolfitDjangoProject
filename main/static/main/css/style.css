@@ -527,3 +527,8 @@ aside ul li a svg{
     list-style: none;
     text-align: left;
 }
+
+#aut{
+    width: 50%;
+    margin-left: 25%;
+}
