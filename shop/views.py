@@ -12,7 +12,7 @@ def boss(request):
 
 
 def is_admin(user):
-    return user.is_authenticated and user.is_staff
+    return user.is_authenticated
 @method_decorator(user_passes_test(is_admin, login_url='/shop/boss'), name='dispatch')
 class BoutiqueView(ListView):
     model = Product

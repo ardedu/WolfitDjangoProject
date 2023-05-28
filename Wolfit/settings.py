@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ur8ikq4e5k=2ckf-5o5hm2s8kwezeu@^jxyyv!fkq(htd7w_5&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'droguaboss.pythonanywhere.com']
 
 AUTH_USER_MODEL = 'users.Users'
 LOGIN_REDIRECT_URL = '/'
@@ -127,9 +127,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = 'C:/Users/EDUARD.ZAKUTOV/PycharmProjects/Wolfit Django Project/Wolfit/media/'
+STATIC_ROOT = "/home/DroguaBoss/WolfitDjangoProject/"
+# or, eg,
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/DroguaBoss/WolfitDjangoProject/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
