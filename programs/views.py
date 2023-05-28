@@ -23,6 +23,11 @@ class NewsDetailView(DetailView):
     model = Articles
     template_name = 'programs/detail_view.html'
     context_object_name = 'article'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        article = self.get_object()
+        context['author'] = article.author
+        return context
 @method_decorator(user_passes_test(is_admin, login_url='/news/access'), name='dispatch')
 class NewsUpdateView(UpdateView):
     model = Articles
@@ -40,7 +45,9 @@ def create(request):
     if request.method == 'POST':
         form = ArticlesForm(request.POST)
         if form.is_valid():
-            form.save()
+            article = form.save(commit=False)
+            article.author = request.user
+            article.save()
             return redirect('news_home')
         else:
             error = 'La forme a été mal remplie'
