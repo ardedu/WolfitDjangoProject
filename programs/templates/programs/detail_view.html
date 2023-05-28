@@ -8,6 +8,7 @@
 <h1>{{ article.title }}</h1>
 <p>{{ article.date }}</p>
 <p id="text-article">{{ article.full_text }}</p>
+<p class="alert alert-info" id="aut">Article écrit  par: {{ author.username }}</p>
     {% if user.is_staff %}
         <a href="{% url 'news-delete' article.id  %}" class="btn btn-danger btn-style">Supprimer l'article</a>
     {% endif %}
