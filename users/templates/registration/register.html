@@ -1,7 +1,7 @@
 {% extends 'main/layout.html' %}
 {% block title %}Rejoindre la cité{% endblock %}
 {% block content %}
-<h1>Register</h1>
+<h1 id="reg">Register</h1>
 <div class="container">
     <form action="{% url 'register' %}" method="post">
     {{form.username}}
@@ -9,7 +9,7 @@
     {{form.password1}}
     {{form.password2}}
     {% csrf_token %}
-    <button type="submit" class="btn btn-success btn-style">S'incrire inshallah</button>
+    <button type="submit" class="btn btn-success btn-style" id="re">S'incrire inshallah</button>
     </form>
 </div>
 <script>
