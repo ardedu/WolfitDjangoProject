@@ -5,13 +5,13 @@
     <h5 class="alert alert-warning" id="slogan">Que de la Frappe à tout les prix</h5>
     
     {% if user.is_authenticated %}
-        <h4 class="alert alert-success">Ton blaze est {{ user }}</h4>
+        <h4 class="alert alert-success" id="blas">Ton blaze est {{ user }}</h4>
         <a href="{% url 'shop' %}" class="btn btn-success btn-style" id="notre">Acceder à la boutique</a>
         <a href="{% url 'logout' %}" class="btn btn-danger" id="quitter">Quitter le quartier</a>
     {% else %}
         <h4 class="alert alert-success" id="ka">Bienvenue dans le quartier de boss</h4>
-        <a href="{% url 'shop' %}" class="btn btn-success btn-style">Acceder à la boutique</a>
-        <a href="{% url 'login' %}" class="btn btn-success btn-style">Je suis d'ici wallah</a>
-        <a href="{% url 'register' %}" class="btn btn-success btn-style">Rejoindre la cité</a>
+        <a href="{% url 'shop' %}" class="btn btn-success btn-style fone">Acceder à la boutique</a>
+        <a href="{% url 'login' %}" class="btn btn-success btn-style fone">Je suis d'ici wallah</a>
+        <a href="{% url 'register' %}" class="btn btn-success btn-style fone">Rejoindre la cité</a>
     {% endif %}
 {% endblock %}

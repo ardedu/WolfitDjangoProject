@@ -532,3 +532,263 @@ aside ul li a svg{
     width: 50%;
     margin-left: 25%;
 }
+
+#open_aside{
+    display: none;
+}
+
+#close_aside{
+    display: none;
+}
+    
+@media screen and (max-width: 414px) and (max-height: 896px) {
+    aside{
+        display: none;
+    }
+
+    header h1{
+        display: none;
+    }
+
+    header a .navigate .text{
+        font-size: 1.1rem;
+    }
+
+    header a .navigate{
+        height: 90px;
+        line-height: 60px;
+        width: 95px;
+        position: relative;
+        bottom: -20%;
+        margin-left: 0;
+        margin-right: 1.5%;
+        
+    }
+    
+
+    header{
+        height: 130px;
+        line-height: 130px;
+    }
+
+    #open_aside{
+        display: block;
+        float: left;
+        position: relative;
+        top: 250px;
+        left: -55px;
+    }
+
+    #close_aside{
+        position: relative;
+        left: 240px;
+        top: 25px;
+    }
+
+    #hello{
+        width: 300px;
+        position: relative;
+        left: -1%;
+        
+    }
+
+    #slogan{
+        width: 300px;
+        position: relative;
+        left: -27%;
+        animation: myAnimation 2s infinite;
+        
+    }
+
+    #blas{
+        width: 300px;
+        position: relative;
+        left: -25%;
+        
+    }
+
+    #notre{
+        position: relative;
+        top: 30px;
+        left: -10%;
+    }
+
+    #quitter{
+        position: relative;
+        top: 30px;
+        left: -10%;
+    }
+
+    #ka{
+        width: 300px;
+        position: relative;
+        left: -25%;
+    }
+
+    .fone{
+        position: relative;
+        top: 30px;
+        left: -9%;
+        margin-bottom: 10px;
+    }
+
+    #confiance{
+        width: 300px;
+        position: relative;
+        left: -25%;
+    }
+
+    .form-control{
+        width: 300px;
+        height: auto;
+        position: relative;
+        left: -35%;
+        
+    }
+
+    #id_title{
+        position: relative;
+        left: -30%;
+    }
+    #id_description{
+        position: relative;
+        left: -30%;
+    }
+    #id_full_text{
+        position: relative;
+        left: -30%;
+    }
+    #id_date{
+        position: relative;
+        left: -30%;
+    }
+
+    #news-delete{
+        position: relative;
+        left: -3%;
+        margin-top: 10px;
+    }
+
+    #h2_news{
+        position: relative;
+        left: -10%;
+        margin-bottom: 10px;
+    }
+
+    #add_new{
+        position: relative;
+        left: -19%;
+        margin-top: 10px;
+    }
+
+    .motdepasse{
+        position: relative;
+        left: -9%;
+    }
+
+    #wlh{
+        position: relative;
+        left: -6%;
+    }
+
+    #reg{
+        position: relative;
+        left: -11%;
+        margin-bottom: 30px;
+    }
+
+    #contact-list{
+        width: 300px;
+        position: relative;
+        left: -15%;
+        top: -70px;
+
+        
+    }
+
+    #yt{
+        font-size: 2rem;
+        position: relative;
+        left: -14%;
+    }
+
+    #data{
+        position: relative;
+        left: -10%;
+
+
+    }
+
+    #text-article{
+        width: 315px;
+        position: relative;
+        left: -18%;
+    }
+
+    #aut{
+        width: 300px;
+        position: relative;
+        left: -27%;
+    }
+
+    #ti{
+        width: 200px;
+        left: 17%;
+    }
+
+    .sta{
+        position: relative;
+        left: -5%;
+    }
+
+    #erro{
+        width: 300px;
+        position: relative;
+        left: -25%;
+    }
+
+    .news_affiche{
+        width: 325px;
+        position: relative;
+        left: -35%;
+    }
+
+    #contact_h2{
+        width: 300px;
+        position: relative;
+        left: -25%;
+    }
+
+    #we{
+        width: 350px;
+        position: relative;
+        left: -55%;
+    }
+
+    #who{
+        width: 300px;
+        position: relative;
+        left: -25%;
+    }
+
+    #re{
+        position: relative;
+        left: -6%;
+        margin-top: 20px;
+    }
+
+    #log{
+        position: relative;
+        left: -10%;
+        margin-bottom: 25px;
+    }
+
+    @keyframes myAnimation {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+      }
+
+    
+  /* Styles spécifiques pour les écrans de petite taille */
+}
